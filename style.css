@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-weight: 400;
+    background: linear-gradient(120deg, #3e5151 0%, #a09378 100%);
+}
+
+.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: #6d6d6d;
+    overflow: hidden;
+}
+
+/* here is your background text animation style start */
+
+.container>.head,
+.container>.head2,
+.container>.head3{
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    word-spacing: 1.5rem;
+    color: #ebedee;
+    user-select: none;
+    width: 650%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-25%,-50%);
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+}
+.container>.head{
+    font-size: 15rem;
+    top: 50%;
+    animation:  floatText 30s infinite linear;
+}
+.container>.head2{
+    top: 35%;
+    animation:  floatText1 35s infinite linear;
+}
+.container>.head3{
+    top: 65%;
+    animation:  floatText2 40s infinite linear;
+}
+
+@keyframes  floatText{
+    to {
+        transform: translate(-100%, -50%);
+      }
+  }
+@keyframes  floatText1{
+    from {
+        transform: translate(-100%, -50%);
+      }
+  }
+@keyframes  floatText2{
+    from {
+        transform: translate(-100%, -50%);
+      }
+  }
+
+/* here your background text end animation  */
+.calculator{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50rem;
+    height: 60rem;
+    background: rgba(207, 207, 207, 0.901);
+    border-radius: 10px;
+    padding: 1rem;
+    color: #383838;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+     rgba(0, 0, 0, 0.1) 0px -79px 30px 0px inset,
+      rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+/* if you want to change mobile view change here font size for h1   */
+.calculator-header>h1{
+    text-align: center;
+    text-transform: uppercase; 
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #6d6d6d;
+}
+.calculator-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2rem 0;
+    row-gap: 1rem;
+}
+
+/* if you want to change mobile view change here width and height for input   */
+.calculator-input>input{
+    width: 35rem;
+    height: 5rem;
+    pointer-events: none;
+}
+.calculator-input>input,
+.per-input>input{
+    outline: none;
+    font-size: 3.5rem;
+    text-align: end;
+    padding: 1rem;
+    border: none;
+    user-select: none;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+/* if you want to change mobile view change here width and height for input buttons   */
+.calculator-buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 35rem;
+    height: 25rem;
+    gap: 1rem 1rem;
+}
+/* if you want to change mobile view change here font-size for button   */
+.calculator-buttons>button,
+.result-per>button{
+    font-size: 2rem;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.calculator-buttons>button:hover,
+.result-per>button:hover{
+    background-color: #dadada;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+#equal{ /* remember this button also  */
+    width: 17rem;
+    position: absolute;
+    bottom: 32%;
+    right: 15%;
+    height: 4.3rem;
+}
+.calculator-per-input{
+    padding-top:1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.per-input{
+    padding-top:1rem;
+}
+.per-input>input{
+    width: 16rem;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+/* this is for hide arrow from input number  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.result-per{
+    padding-top: 2rem;
+    width: 35rem;
+    font-weight: 700;
+}
+.result-per>button{
+    width: 10rem;
+    height: 3rem;
+    margin-right: 2rem;
+    align-items: start;
+}
+@media (width <= 700px) {
+    .calculator{
+        width: 40rem;
+        height: 60rem;
+    }
+    .calculator-header{
+        font-size: 1.2rem;
+    }
+    #equal{
+        right: 6%;
+        bottom: 34%;
+    }
+}
+@media (width <= 450px) {
+    .calculator{
+        width: 25rem;
+        height: 45rem;
+    }
+    .calculator-header{
+        font-size: 0.75rem;
+    }
+    .calculator-input>input{
+        width: 100%;
+        height: 3rem;
+    }
+    .calculator-buttons{
+        display: grid;
+        width: 100%;
+        height: 100%;
+    }
+    .calculator-buttons>button{
+        width: 5rem;
+        height: 3rem;
+        gap: 0;
+    }
+    #equal{
+        right: 5%;
+        bottom: 32%;
+        width: 11rem;
+        height: 3rem;
+    }
+    .calculator-per-input>h2{
+        font-size: 1.5rem;
+    }
+    .per-input>input{
+        width: 10rem;
+    }
+    #equal-per{
+        width: 5rem;
+    }
+    .result-per{
+        width: 100%;
+        padding-top: 1rem;
+    }
+}
+
+/* add trasition  for smoothness*/
+.calculator,
+.calculator-header,
+.calculator-input>input,
+.calculator-buttons,
+.calculator-buttons>button,
+#equal,
+.calculator-per-input>h2,
+.per-input>input,
+#equal-per,
+.result-per{
+    transition: all 0.5s ease-in-out;
+}
